@@ -10,10 +10,10 @@ NC='\033[0m' # No Color
 
 # Configuration
 REPO_URL="https://raw.githubusercontent.com/rebaze/security-analyst/refs/heads/main/security-analyst.md"
-TARGET_DIR=".claude/subagents"
+TARGET_DIR=".claude/agents"
 TARGET_FILE="security-analyst.md"
 
-echo -e "${GREEN}Installing Security Analyst subagent for Claude Code...${NC}"
+echo -e "${GREEN}Installing Security Analyst agent for Claude Code...${NC}"
 
 # Function to check if command exists
 command_exists() {
@@ -47,10 +47,10 @@ download_file "$REPO_URL" "$TARGET_DIR/$TARGET_FILE"
 
 # Verify the file was downloaded
 if [ -f "$TARGET_DIR/$TARGET_FILE" ]; then
-    echo -e "${GREEN}✅ Successfully installed security-analyst subagent!${NC}"
+    echo -e "${GREEN}✅ Successfully installed security-analyst agent!${NC}"
     echo -e "${YELLOW}Location: $TARGET_DIR/$TARGET_FILE${NC}"
     echo ""
-    echo "You can now use the security-analyst subagent in Claude Code."
+    echo "You can now use the security-analyst agent in Claude Code."
     echo "Example usage: @security-analyst analyze this code for vulnerabilities"
 else
     echo -e "${RED}❌ Installation failed. File not found at $TARGET_DIR/$TARGET_FILE${NC}"
